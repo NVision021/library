@@ -1,5 +1,28 @@
+:root {
+  --wood-colour: burlywood;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   justify-content: center;
-  background-color: burlywood;
+}
+
+.books-section {
+  background-color: var(--wood-colour);
+  flex-grow: 1;
+}
+
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.bookshelf > * {
+  background-color: red;
 }
