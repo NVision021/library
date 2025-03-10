@@ -1,7 +1,7 @@
 let BOOKSHELF = document.querySelector(".bookshelf");
 
 //To store books
-const myLibrary = [{name: "name", author: "author", pages: "pages", readStatus: "read", bookID: "555"}];
+const myLibrary = [{name: "The Road", author: "Cormac McCarthy", pages: "304", readStatus: false, bookID: "no ID"}];
 
 //Book constructor
 function Book (name, author, pages, readStatus, bookId){
@@ -27,13 +27,28 @@ function displayBooks() {
   //add what is in array
   for (let book of myLibrary) {
     let bookCard = document.createElement("div");
+
     let cardHeading = document.createElement("h3");
     cardHeading.textContent = `${book.name} by ${book.author}`;
-    let cardContent = document.createElement("div");
-    cardContent.textContent = `pages: ${book.pages}`;
+
+    let cardContentPages = document.createElement("p");
+    cardContentPages.textContent = `Pages: ${book.pages}`;
+    
+    let cardContentRead = document.createElement("label");
+    cardContentRead.setAttribute("for", "readStatus");
+    cardContentRead.textContent = `Read?`;
+
+    let readTickBox = document.createElement("input");
+    readTickBox.setAttribute("id", "readStatus");
+    readTickBox.setAttribute("type", "checkbox");
+    if (book.readStatus === true) {
+      readTickBox.setAttribute("checked", "");
+    }
 
     bookCard.appendChild(cardHeading);
-    bookCard.appendChild(cardContent);
+    bookCard.appendChild(cardContentPages);
+    bookCard.appendChild(cardContentRead);
+    bookCard.appendChild(readTickBox);
     BOOKSHELF.appendChild(bookCard);
   }
 }
