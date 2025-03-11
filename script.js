@@ -32,9 +32,9 @@ function displayBooks() {
   for (let book of myLibrary) {
     let bookCard = document.createElement("div");
     if (book.readStatus) {
-      bookCard.classList.toggle("green");
+      bookCard.classList.toggle("read");
     } else {
-      bookCard.classList.toggle("red");
+      bookCard.classList.toggle("unread");
     }
 
     let removeButton = document.createElement("button");

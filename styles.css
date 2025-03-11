@@ -1,7 +1,7 @@
 :root {
   --wood-colour: burlywood;
-  --red: red;
-  --green: lightgreen;
+  --unread: red;
+  --read: lightgreen;
 }
 
 body {
@@ -35,9 +35,9 @@ button.new-book {
 }
 
 .green {
-  background-color: var(--green);
+  background-color: var(--read);
 }
 
 .red {
-  background-color: var(--red);
+  background-color: var(--unread);
 }
