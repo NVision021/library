@@ -1,5 +1,7 @@
 :root {
   --wood-colour: burlywood;
+  --red: red;
+  --green: lightgreen;
 }
 
 body {
@@ -30,4 +32,12 @@ button.new-book {
 
 .bookshelf > * {
   background-color: red;
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.red {
+  background-color: var(--red);
 }

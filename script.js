@@ -1,5 +1,5 @@
 //To store books
-const myLibrary = [{name: "The Road", author: "Cormac McCarthy", pages: "304", readStatus: false, bookId: "no ID"}];
+let myLibrary = [];
 
 //Book constructor
 function Book (name, author, pages, readStatus, bookId){
@@ -8,6 +8,11 @@ function Book (name, author, pages, readStatus, bookId){
   this.pages = pages;
   this.readStatus = readStatus;
   this.bookId = bookId;
+}
+
+//Prototype function to toggle read status
+Book.prototype.toggleRead = function() {
+  this.readStatus = this.readStatus ?false :true;
 }
 
 //Function to create book
@@ -26,6 +31,20 @@ function displayBooks() {
   //add what is in array
   for (let book of myLibrary) {
     let bookCard = document.createElement("div");
+    if (book.readStatus) {
+      bookCard.classList.toggle("green");
+    } else {
+      bookCard.classList.toggle("red");
+    }
+
+    let removeButton = document.createElement("button");
+    removeButton.textContent = "X";
+    removeButton.setAttribute("data-bookid", book.bookId);
+    removeButton.addEventListener ("click", (event) => {
+      //Find books with matching id to this button
+      myLibrary = myLibrary.filter((book) => book.bookId !== event.target.dataset.bookid);
+      displayBooks();
+    })
 
     let cardHeading = document.createElement("h3");
     cardHeading.textContent = `${book.name} by ${book.author}`;
@@ -37,15 +56,19 @@ function displayBooks() {
     cardContentRead.setAttribute("for", book.bookId);
     cardContentRead.textContent = `Read?`;
 
+
     let readTickBox = document.createElement("input");
     readTickBox.setAttribute("type", "checkbox");
     readTickBox.setAttribute("id", book.bookId);
-
-
     if (book.readStatus === true) {
       readTickBox.setAttribute("checked", "");
     }
+    readTickBox.addEventListener("change", () => {
+      book.toggleRead();
+      displayBooks();
+    });
 
+    bookCard.appendChild(removeButton);
     bookCard.appendChild(cardHeading);
     bookCard.appendChild(cardContentPages);
     bookCard.appendChild(cardContentRead);
@@ -89,4 +112,5 @@ bookForm.addEventListener("submit", (event) => {
   dialog.close();
 })
 
+addBookToLibrary("The Road", "Cormac McCarthy", 303, true);
 displayBooks();
