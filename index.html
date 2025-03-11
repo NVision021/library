@@ -11,9 +11,34 @@
   <header>
     <h1>Library</h1>
   </header> 
+  <button class="new-book">New Book</button>
   <section class="books-section">
     <div class="bookshelf">
     </div>
   </section> 
+
+  <dialog>
+    <form id="book-form">
+      <label for="title">Title</label>
+      <input type="text" id="title" required autofocus>
+      
+      <label for="author">Author:</label>
+      <input type="text" id="author" required>
+
+      <label for="pages">Pages:</label>
+      <input type="number" id="pages" required>
+
+      <p>Finished reading?</p>
+      <input type="radio" id="yes-reading" name="reading-status" value="yes" checked>
+      <label for="yes-reading">Yes</label>
+
+      <input type="radio" id="no-reading" name="reading-status" value="no">
+      <label for="no-reading">No</label>
+
+      <button type="button" id="modalCancel">Cancel</button>
+      <button type="reset" id="modalReset">Reset</button>
+      <button type="submit" id="modalOkay">Okay</button>
+    </form>
+  </dialog>
 </body>
 </html>

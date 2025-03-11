@@ -13,6 +13,11 @@ header {
   justify-content: center;
 }
 
+button.new-book {
+  width: 100px;
+  align-self: center;
+}
+
 .books-section {
   background-color: var(--wood-colour);
   flex-grow: 1;

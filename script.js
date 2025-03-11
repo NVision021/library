@@ -1,7 +1,5 @@
-let BOOKSHELF = document.querySelector(".bookshelf");
-
 //To store books
-const myLibrary = [{name: "The Road", author: "Cormac McCarthy", pages: "304", readStatus: false, bookID: "no ID"}];
+const myLibrary = [{name: "The Road", author: "Cormac McCarthy", pages: "304", readStatus: false, bookId: "no ID"}];
 
 //Book constructor
 function Book (name, author, pages, readStatus, bookId){
@@ -20,9 +18,10 @@ function addBookToLibrary(name, author, pages, readStatus) {
 //Function to loop through array and display each book on the page
 function displayBooks() {
   //remove what is already in there
+  let bookshelf = document.querySelector(".bookshelf");
   let booksOnShelf = document.querySelectorAll(".bookshelf > *");
   for (let book of booksOnShelf) {
-    BOOKSHELF.removeChild(book);
+    bookshelf.removeChild(book);
   }
   //add what is in array
   for (let book of myLibrary) {
@@ -35,12 +34,14 @@ function displayBooks() {
     cardContentPages.textContent = `Pages: ${book.pages}`;
     
     let cardContentRead = document.createElement("label");
-    cardContentRead.setAttribute("for", "readStatus");
+    cardContentRead.setAttribute("for", book.bookId);
     cardContentRead.textContent = `Read?`;
 
     let readTickBox = document.createElement("input");
-    readTickBox.setAttribute("id", "readStatus");
     readTickBox.setAttribute("type", "checkbox");
+    readTickBox.setAttribute("id", book.bookId);
+
+
     if (book.readStatus === true) {
       readTickBox.setAttribute("checked", "");
     }
@@ -49,8 +50,43 @@ function displayBooks() {
     bookCard.appendChild(cardContentPages);
     bookCard.appendChild(cardContentRead);
     bookCard.appendChild(readTickBox);
-    BOOKSHELF.appendChild(bookCard);
+    bookshelf.appendChild(bookCard);
   }
 }
+
+const newBookButton = document.querySelector(".new-book");
+const dialog = document.querySelector("dialog");
+//Make button open modal
+newBookButton.addEventListener("click", () => {
+  dialog.showModal();
+})
+
+//Add functionality to okay and cancel buttons in modal
+const cancelButton = document.querySelector("#modalCancel");
+cancelButton.addEventListener("click", (event) => {
+  bookForm.reset();
+  dialog.close();
+})
+
+const bookForm = document.querySelector("#book-form");
+bookForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const bookName = document.querySelector("#title").value;
+  const bookAuthor = document.querySelector("#author").value;
+  const bookPages = document.querySelector("#pages").value;
+  let bookReadStatus = "";
+  if (document.querySelector("#yes-reading").checked) {
+    bookReadStatus = true;
+  } else {
+    bookReadStatus = false;
+  }
+  addBookToLibrary(bookName, bookAuthor, bookPages, bookReadStatus);
+  displayBooks();
+
+  bookForm.reset();
+
+  dialog.close();
+})
 
 displayBooks();
