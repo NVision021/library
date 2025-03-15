@@ -112,5 +112,31 @@ bookForm.addEventListener("submit", (event) => {
   dialog.close();
 })
 
-addBookToLibrary("The Road", "Cormac McCarthy", 303, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 5, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 10, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 100, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 5, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 10, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
+addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
 displayBooks();

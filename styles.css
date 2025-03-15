@@ -28,10 +28,9 @@ button.new-book {
 
 .bookshelf {
   display: grid;
-  grid-template-columns: repeat(20, 80px);
+  grid-template-columns: repeat(20, 11ch);
   gap: 10px;
   padding: 5px;
-
 }
 
 .bookshelf > div {
@@ -44,6 +43,8 @@ button.new-book {
 
 .bookshelf p {
   border-top: solid gold 2px;
+  width: 100%;
+  text-align: center;
 }
 
 .bookshelf button {
@@ -63,3 +64,14 @@ button.new-book {
 .unread {
   background-color: var(--unread);
 }
+
+/*need to: 
+-Make book only as tall as half the container (close but not quite)
+  -Issue is that the grid container is not a set size (flexible) so row size is being set by div size using div size, but also have "section" tag to work around (?chat GPT)
+  -Chat GPT states that the bookshelf will need to be a set size (potentially use VH units)
+  -UPDATE: It may not actually be a good idea to make the bookshelf flexible (think tiny screens, the books will be too small). Instead, lets set the book height in ch units with hidden overflow and leave it there
+-Fix horizontal grid overflow and vertical grid overflow
+  -Use the autofit/fill minmax tech
+-Fix modal formatting
+-Format header including fonts
+-Format button/s
