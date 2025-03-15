@@ -114,7 +114,7 @@ bookForm.addEventListener("submit", (event) => {
 
 addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
 addBookToLibrary("The Road", "Cormac McCarthy", 5, true);
-addBookToLibrary("The Road", "Cormac McCarthy", 10, true);
+addBookToLibrary("Harry Potter and the Goblet of Fire ", "JK Rowling", 10, true);
 addBookToLibrary("The Road", "Cormac McCarthy", 100, true);
 addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
 addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
