@@ -2,6 +2,7 @@
   --wood-colour: #B95129;
   --unread: red;
   --read: green;
+  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 body {
@@ -12,13 +13,40 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 2px 3px rgb(0, 0, 0, 0.2);
+  background-color: whitesmoke;
+}
+
+header > p {
+  font-style: italic;
 }
 
 button.new-book {
-  width: 100px;
-  align-self: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+button:not(.book button){
+  width: 10rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+button:not(.book button):hover {
+  background-color: white;
+  border: solid blue 2px;
+  color: blue;
+}
+
+button {
+  cursor: pointer;
 }
 
 .books-section {
@@ -35,30 +63,31 @@ button.new-book {
   padding: 5px;
 }
 
-.bookshelf > div {
+.book {
   border-radius: 8px;
   overflow: hidden;
-  height: 25em;
+  height: 25rem;
   padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.bookshelf p {
+.book p {
   border-top: solid gold 2px;
   width: 100%;
   text-align: center;
 }
 
-.bookshelf button {
+.book button {
   margin-bottom: 16px;
 }
 
-.bookshelf h3{
+.book h3{
   writing-mode: vertical-rl;
   overflow: hidden;
   flex-grow: 1;
+  text-align: center;
 }
 
 .read {
@@ -67,6 +96,20 @@ button.new-book {
 
 .unread {
   background-color: var(--unread);
+}
+
+dialog p {
+  display: inline-block;
+}
+
+.modal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button-container > button {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /*need to: 

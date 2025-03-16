@@ -32,10 +32,11 @@ function displayBooks() {
   for (let book of myLibrary) {
     let bookCard = document.createElement("div");
     if (book.readStatus) {
-      bookCard.classList.toggle("read");
+      bookCard.classList.add("read");
     } else {
-      bookCard.classList.toggle("unread");
+      bookCard.classList.add("unread");
     }
+    bookCard.classList.add("book");
 
     let removeButton = document.createElement("button");
     removeButton.textContent = "X";
