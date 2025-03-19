@@ -113,6 +113,4 @@ bookForm.addEventListener("submit", (event) => {
   dialog.close();
 })
 
-addBookToLibrary("The Road", "Cormac McCarthy", 1000, true);
-
 displayBooks();
